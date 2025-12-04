@@ -1,6 +1,6 @@
 import RestaurantsContainer from "./components/RestaurantsContainer";
-import AddRestaurant from "./components/addRestaurant";
-import { data } from "./data/data.js";
+import AddRestaurant from './components/AddRestaurant.jsx'
+import { data } from '../server/data.js';
 import { useState } from "react";
 import "./App.css";
 
@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>aaa</h1>
       <AddRestaurant updateRestaurants={updateRestaurants} />
       <RestaurantsContainer restaurants={restaurantState} />
     </div>

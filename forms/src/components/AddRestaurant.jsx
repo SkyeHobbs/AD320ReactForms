@@ -1,7 +1,36 @@
 import { useState } from "react";
 function AddRestaurant({ updateRestaurants }) {
+   const [formData, setFormData] = useState({
+    name: "",
+    address: "",
+    phone: "",
+    cuisine: "",
+    rating: "",
+    image:""
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    // Here we are copying in the current form data with the spread operator
+    // We are then adding the new key value pair with [name]:value
+    setFormData({ ...formData, [name]: value });
+    console.log(formData)
+  };
+
   return (
     <form>
+      <div>
+        <label>Name:</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
       <div>
         <label>Name:</label>
         <input type="text" name="name" required />
